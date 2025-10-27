@@ -65,37 +65,14 @@
             z-index: 999;
             width: 140px;
             height: 140px;
-            background: #000;
             border: 3px solid #fff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 15px 10px;
         }
 
-        .hexagram-line {
-            height: 8px;
-            background: #fff;
+        .logo svg {
             width: 100%;
-            position: relative;
+            height: 100%;
         }
-
-        .letter {
-            position: absolute;
-            color: #000;
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: 0;
-            line-height: 1;
-        }
-
-        /* Position letters diagonally in spaces between lines */
-        .letter-p { top: 8px; left: 8px; }
-        .letter-n { top: 8px; left: 30px; }
-        .letter-i { top: 8px; left: 52px; }
-        .letter-q { top: 8px; left: 74px; }
-        .letter-a { top: 8px; left: 96px; }
 
         /* Full Screen Sections */
         section {
@@ -170,25 +147,9 @@
             .logo {
                 width: 100px;
                 height: 100px;
-                padding: 10px 8px;
                 top: 10px;
                 left: 10px;
             }
-
-            .hexagram-line {
-                height: 6px;
-            }
-
-            .letter {
-                font-size: 17px;
-            }
-
-            .letter-p { top: 6px; left: 5px; }
-            .letter-n { top: 6px; left: 21px; }
-            .letter-i { top: 6px; left: 37px; }
-            .letter-q { top: 6px; left: 53px; }
-            .letter-a { top: 6px; left: 69px; }
-        }
 
             .banner-text {
                 font-size: 18px;
@@ -219,22 +180,25 @@
 <body>
     <!-- PNIQA I Ching Hexagram Logo -->
     <div class="logo">
-        <div class="hexagram-line">
-            <span class="letter letter-p">P</span>
-        </div>
-        <div class="hexagram-line">
-            <span class="letter letter-n">N</span>
-        </div>
-        <div class="hexagram-line">
-            <span class="letter letter-i">I</span>
-        </div>
-        <div class="hexagram-line">
-            <span class="letter letter-q">Q</span>
-        </div>
-        <div class="hexagram-line">
-            <span class="letter letter-a">A</span>
-        </div>
-        <div class="hexagram-line"></div>
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+            <!-- Black background -->
+            <rect width="140" height="140" fill="#000"/>
+
+            <!-- 6 solid white hexagram lines -->
+            <rect x="10" y="10" width="120" height="10" fill="#fff"/>
+            <rect x="10" y="35" width="120" height="10" fill="#fff"/>
+            <rect x="10" y="60" width="120" height="10" fill="#fff"/>
+            <rect x="10" y="85" width="120" height="10" fill="#fff"/>
+            <rect x="10" y="110" width="120" height="10" fill="#fff"/>
+            <rect x="10" y="127" width="120" height="10" fill="#fff"/>
+
+            <!-- Letters P N I Q A positioned diagonally descending in white spaces -->
+            <text x="15" y="32" font-family="Roboto Slab, Arial, sans-serif" font-size="20" font-weight="900" fill="#fff">P</text>
+            <text x="38" y="57" font-family="Roboto Slab, Arial, sans-serif" font-size="20" font-weight="900" fill="#fff">N</text>
+            <text x="61" y="82" font-family="Roboto Slab, Arial, sans-serif" font-size="20" font-weight="900" fill="#fff">I</text>
+            <text x="84" y="107" font-family="Roboto Slab, Arial, sans-serif" font-size="20" font-weight="900" fill="#fff">Q</text>
+            <text x="107" y="125" font-family="Roboto Slab, Arial, sans-serif" font-size="20" font-weight="900" fill="#fff">A</text>
+        </svg>
     </div>
 
     <!-- Hanging BUY NOW Banner -->
