@@ -57,21 +57,45 @@
             color: #fff;
         }
 
-        /* PNIQA Logo */
+        /* PNIQA I Ching Hexagram Logo */
         .logo {
             position: fixed;
             top: 20px;
             left: 20px;
             z-index: 999;
+            width: 140px;
+            height: 140px;
             background: #000;
-            color: #fff;
-            padding: 15px 20px;
             border: 3px solid #fff;
-            font-size: 28px;
-            font-weight: 400;
-            letter-spacing: 3px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px 10px;
         }
+
+        .hexagram-line {
+            height: 8px;
+            background: #fff;
+            width: 100%;
+            position: relative;
+        }
+
+        .letter {
+            position: absolute;
+            color: #000;
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 0;
+            line-height: 1;
+        }
+
+        /* Position letters diagonally in spaces between lines */
+        .letter-p { top: 8px; left: 8px; }
+        .letter-n { top: 8px; left: 30px; }
+        .letter-i { top: 8px; left: 52px; }
+        .letter-q { top: 8px; left: 74px; }
+        .letter-a { top: 8px; left: 96px; }
 
         /* Full Screen Sections */
         section {
@@ -144,9 +168,27 @@
 
         @media (max-width: 768px) {
             .logo {
-                font-size: 20px;
-                padding: 10px 15px;
+                width: 100px;
+                height: 100px;
+                padding: 10px 8px;
+                top: 10px;
+                left: 10px;
             }
+
+            .hexagram-line {
+                height: 6px;
+            }
+
+            .letter {
+                font-size: 17px;
+            }
+
+            .letter-p { top: 6px; left: 5px; }
+            .letter-n { top: 6px; left: 21px; }
+            .letter-i { top: 6px; left: 37px; }
+            .letter-q { top: 6px; left: 53px; }
+            .letter-a { top: 6px; left: 69px; }
+        }
 
             .banner-text {
                 font-size: 18px;
@@ -175,8 +217,25 @@
     </style>
 </head>
 <body>
-    <!-- PNIQA Logo -->
-    <div class="logo">PNIQA</div>
+    <!-- PNIQA I Ching Hexagram Logo -->
+    <div class="logo">
+        <div class="hexagram-line">
+            <span class="letter letter-p">P</span>
+        </div>
+        <div class="hexagram-line">
+            <span class="letter letter-n">N</span>
+        </div>
+        <div class="hexagram-line">
+            <span class="letter letter-i">I</span>
+        </div>
+        <div class="hexagram-line">
+            <span class="letter letter-q">Q</span>
+        </div>
+        <div class="hexagram-line">
+            <span class="letter letter-a">A</span>
+        </div>
+        <div class="hexagram-line"></div>
+    </div>
 
     <!-- Hanging BUY NOW Banner -->
     <div class="hanging-banner">
