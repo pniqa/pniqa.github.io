@@ -1,54 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNIQA - Handcrafted Light</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Slab:300,400">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	<title> Photoniqa - Quality LED Lighting Parts and Kits at Affordable Prices.  Shipped from USA! </title>
+        body {
+            font-family: 'Roboto Slab', serif;
+            overflow-x: hidden;
+        }
 
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Slab:300">
+        /* Hanging BUY NOW Banner */
+        .hanging-banner {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            text-align: center;
+        }
 
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono:300">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	</head>
+        .wire {
+            width: 2px;
+            height: 40px;
+            background: #333;
+            margin: 0 auto;
+        }
 
-	<body>
-		<header>
-			<h1> Photoniqa LED Supply</h1>
-			<p> Quality LED Lighting Parts at Affordable Prices!  DIY and save! Ships from USA! </p>
-			<hr>
-		</header>
+        .banner-text {
+            background: #fff;
+            color: #000;
+            padding: 15px 40px;
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-		<main>
-			 <img src="http://pniqa.github.io/midPLA100_inaction.jpg" alt="100 watt unit in action" width="500" height="600"> 
-			<img src="http://pniqa.github.io/wowfinalPLA100in_action2.jpg" alt="100 watt unit in action" width="500" height="600">
-			
+        .banner-text:hover {
+            background: #000;
+            color: #fff;
+        }
 
-			<h2> Current Parts For Sale - June 2020</h2>
-				<li> Meanwell HLG-480-24A 24V 20A - This badboy can run 18 of the Strips below, covering an area of 2 * 4 feet with intense light - $154</li>
-				<li> Meanwell HVG-480 220VAC, 24V output - Similar to HLG as above, but accepts 
-					higher wall voltage, for warehouse power or UK or European power outlet - $ 140 </li>
-				<li> Meanwell LPC-60-1400
-LED Driver (Constant Current) 60 watts 1400mA Linear
-42Vdc 90-264Vac Non-PFC Non-Dimming
-IP67 Plastic Enclosure - $18
-				</li>
-				<li> 
-			Meanwell LPV-100-24 24 Volts 100 Watts Constant Current IP67 
-					- Run 4 - 6 of the H and F series strips! $24 </li>
-			<li> Samsung FSERIES GEN3 5000K & 3000K Quantum Diode Strip Module - $12 a piece </li>
-				<li> Samsung 3000K H Series Quantum Board Strips, 2ft, 24 V  $12 a piece </li>
+        /* PNIQA Logo */
+        .logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 999;
+            background: #000;
+            color: #fff;
+            padding: 15px 20px;
+            border: 3px solid #fff;
+            font-size: 28px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
 
-				<li> Aluminum, 1 inch square tube, $4 </li>
-				<li> Samsung Strip, mated onto Aluminum Square tube with generous amount of heat conduction adhesive
-				- $15 </ul>
+        /* Full Screen Sections */
+        section {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
 
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
 
-				<h3> If you see it here, it's still available! To order, click here: <a href = "mailto:photoniqa@gmail.com?subject = LED_Parts_Order&body = Message">
-Order Now
-					</a> </h3>
-					<h2>Paypal and Crypto Accepted!</h2>
+        .before {
+            background-image: url('earlymidPLA100_inaction.jpg');
+        }
 
-				<p style="color:red">Don't procrastinate! YOUR ORDER SHIPS FREE TO CONTINENTAL USA IF PLACED BEFORE JUNE 16TH!</p>
-				<h4>This website is just pure HTML.  KISS, Keeping it simple to save you $$$!</h4>
+        .after {
+            background-image: url('wowfinalPLA100in_action2.jpg');
+        }
 
-		</main>
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
 
-<footer><hr><p class="text-muted"><small>© Photoniqa LED 2020</small></p></footer>
+        .content h2 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 300;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 20px;
+                padding: 10px 15px;
+            }
+
+            .banner-text {
+                font-size: 18px;
+                padding: 12px 30px;
+            }
+
+            .content h2 {
+                font-size: 32px;
+            }
+
+            .content {
+                max-width: 90%;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PNIQA Logo -->
+    <div class="logo">PNIQA</div>
+
+    <!-- Hanging BUY NOW Banner -->
+    <div class="hanging-banner">
+        <div class="wire"></div>
+        <div class="banner-text">BUY NOW</div>
+    </div>
+
+    <!-- Before Section -->
+    <section class="before">
+        <div class="content">
+            <h2>Before</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </section>
+
+    <!-- After Section -->
+    <section class="after">
+        <div class="content">
+            <h2>After</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </section>
+</body>
+</html>
